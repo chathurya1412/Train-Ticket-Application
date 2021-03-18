@@ -4,6 +4,13 @@
 <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Customer Register</title>
+    <style>
+    body{
+        background-image: url("train.jpg");
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+    </style>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style1.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'> 
@@ -18,7 +25,7 @@
          }
       </script>
 </head>  
-<body style=" color: yellow; background-image:url(https://image.shutterstock.com/image-illustration/retro-vintage-technology-old-train-260nw-105201944.jpg);"> 
+<body style=" color: yellow;);"> 
     <br> <br>
     <center><h1 style="color:white;"><u> TRAIN TICKET RESERVATION SYSTEM </u></h1></center>
     <center><h2 style="color:white;">User Registration Form</h2></center>
