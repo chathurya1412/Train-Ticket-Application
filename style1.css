@@ -1,0 +1,84 @@
+.booking-form-box
+{
+    max-width: 350px;
+    border: 0px solid blue;
+    margin: 5% auto 0;
+}
+
+/* .booking-form-box{
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 420px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.5);
+} */
+.booking-form label {
+
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    /* color: #efed40; */
+    font-weight: bold;
+    font-size: medium;
+}
+.booking-form
+{
+   padding: 0 20px 20px;
+   /* background: rgba(0,0,0,0.5); */
+}
+
+input::placeholder {
+    color: rgb(48, 45, 45);
+}
+
+.input-grp {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 130px;
+    display: inline-block;
+    /* background-color: blue; */
+}
+
+body {
+    /* background-image: url(https://image.shutterstock.com/image-illustration/retro-vintage-technology-old-train-260nw-105201944.jpg); */
+    background-size: cover;
+    background-position: center;
+}
+h1,h2{
+  color:yellow;  
+}
+/* body{  
+   background-image: url("flight2.jpg"); 
+    background-image: url(https://www.luxurytrainclub.com/wp-content/uploads/_mobileslide/Golden-Chariot-ext-web.jpg);     
+    margin-top: 100px;  
+    margin-bottom: 100px;  
+    margin-right: 150px;  
+    margin-left: 80px;  
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed; 
+    color: #261A15;
+    font-family: 'Yantramanav', sans-serif;;  
+    font-size: 100%;  
+    }   */
+    .input-grp input[type="submit"]:hover
+    {
+        background: #efed40;
+        color: black;
+    
+    }
+.input-grp input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff; 
+    font-size: 16px;
+    background: #3204ff;
+    cursor: pointer;
+    border-radius: 20px;
+}

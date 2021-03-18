@@ -1,0 +1,41 @@
+/* header */
+#header
+{
+    white-space: nowrap;
+    overflow-x: auto;
+    background-color: rgb(45 93 133);
+    padding:3% 6%;
+    color: white;
+}
+.header-h1
+{
+    display:inline-block;
+}
+.header-i1
+{
+    display:inline-block;
+    margin-left: 45%;
+}
+.header-i2
+{
+    display:inline-block;
+    margin-left: 5%;
+}
+/* body */
+#body{
+    text-align: center;
+    margin-bottom: 7%;
+    margin-top: 7%;
+}
+.change-pswd-content
+{
+    display: none;
+}
+/* footer */
+#footer
+{
+    text-align:center;
+    background-color: rgb(45 93 133);
+    padding:2% 4%;
+    color: white;
+}
