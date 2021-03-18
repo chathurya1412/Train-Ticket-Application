@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>WELCOME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <!-- <link rel="stylesheet" href="./responsive.css" /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="top-wrapper">
+    <div class="container">
+      
+      <h1>WELCOME TO INDIAN RAILWAYS</h1>
+      <h1>BOOK YOUR TICKETS AND ENJOY OUR EXCELLENCE SERVICE</h1>
+      <h2>Please follow all the COVID-19 instructions and keep yourselves aware</h2>
+      <h2> Stay Safe. Stay Healthy</h2>
+      <div class="btn-wrapper">
+        <a href="login.php" class="btn signup">Login</a>
+        <a href="signup.php" class="btn facebook">Register</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+<!-- code for pop-up window -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<style type="text/css">
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #000;
+filter:alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+z-index: 100;
+display: none;
+}
+.cnt223 a{
+text-decoration: none;
+}
+.popup{
+width: 100%;
+margin: 0 auto;
+display: none;
+position: fixed;
+z-index: 101;
+top: 2%;
+}
+.cnt223{
+min-width: 1000px;
+width: 600px;
+min-height: 500px;
+margin: 100px auto;
+background: #f3f3f3;
+position: relative;
+z-index: 103;
+padding: 15px 35px;
+border-radius: 5px;
+box-shadow: 0 2px 5px #000;
+}
+.cnt223 p{
+clear: both;
+    color: #555555;
+    /* text-align: justify; */
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.cnt223 p a{
+color: #d91900;
+font-weight: bold;
+}
+.cnt223 .x{
+float: right;
+height: 35px;
+left: 22px;
+position: relative;
+top: -25px;
+width: 34px;
+}
+.cnt223 .x:hover{
+cursor: pointer;
+}
+</style>
+<script type='text/javascript'>
+$(function(){
+var overlay = $('<div id="overlay"></div>');
+overlay.show();
+overlay.appendTo(document.body);
+$('.popup').show();
+$('.close').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+
+
+ 
+
+$('.x').click(function(){
+$('.popup').hide();
+overlay.appendTo(document.body).remove();
+return false;
+});
+});
+</script>
+<div class='popup'>
+<div class='cnt223'>
+<h1>COVID-19 INSTRUCTIONS</h1>
+<p>
+  <b>Please Follow the below instructions for safe and happy Journey</b><br><br>
+  <ol>
+    <li>All passengers are hereby informed that downloading of Aarogya Setu App on their mobile phone, that they are carrying along, is advisable.</li>
+    <li>Maintain at least a 1-metre distance between yourself and others to reduce your risk of infection when they cough, sneeze or speak. Maintain an even greater distance between yourself and others when indoors. The further away, the better.</li>
+    <li>Make wearing a mask a normal part of being around other people. The appropriate use, storage and cleaning or disposal are essential to make masks as effective as possible.</li>
+    <li>Here are the basics of how to wear a mask:
+      <ul>
+        <li>Clean your hands before you put your mask on, as well as before and after you take it off, and after you touch it at any time.</li>
+        <li>Make sure it covers both your nose, mouth and chin.</li>
+        <li>When you take off a mask, store it in a clean plastic bag, and every day either wash it if it’s a fabric mask, or dispose of a medical mask in a trash bin.</li>
+        <li>Don’t use masks with valves</li>
+      </ul>
+    </li>
+    <li>Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</li>
+    <li>Avoid touching your eyes, nose and mouth</li>
+    <li>Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze.</li>
+    <li>Clean and disinfect surfaces frequently especially those which are regularly touched, such as door handles, faucets and phone screens.</li>
+    <li>Stay home and self-isolate even if you have minor symptoms such as cough, headache, mild fever, until you recover.</li>
+    <li>If you have a fever, cough and difficulty breathing, seek medical attention immediately. Call by telephone first, if you can and follow the directions of your local health authority.</li>
+    
+  </ol>
+<br/>
+<br/>
+<a href='' class='close'>Close</a>
+</p>
+</div>
+</div>
+</html>

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+
+{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+
+}	
+
+.contact
+{
+	position: relative;
+	min-height: 100vh;
+	padding: 50px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: url(background/1.jpg);
+
+	background-size: cover;
+}
+.content .content
+{
+	max-width: 800px;
+	
+	text-align: center;
+}
+
+.contact .content h2
+{
+	max-width: 36px;
+	font-weight: 500px;
+	color: black;
+}
+
+.contact .content p
+{
+	/*font-size: 36px;*/
+	font-weight: 500px;
+	color: black;	
+}
+
+.container1
+{
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+
+
+}
+
+.container1 .ContactInfo
+{
+	
+	width: 50px;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.container1 .ContactInfo .box
+{
+	position: relative;
+	padding: 20px 0px;
+	display: flex;
+
+}
+
+.container1 .ContactInfo .box .icon
+{
+	
+	min-width: 60px;
+	height: 60px;
+	background: #D3D3D3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%
+	font-size: 22px;
+	
+}
+
+.container1 .ContactInfo .box .text
+{
+	display: flex;
+	margin-left: 20px;
+	font-size: 16px;
+	color: black;
+	flex-direction: column;
+	font-weight: 300px;
+	
+}
+
+.container1 .ContactInfo .box .text h3
+{
+	
+	font-weight: 500px;
+	color: #00bcd4;
+	
+}
+

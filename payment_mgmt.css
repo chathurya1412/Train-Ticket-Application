@@ -1,0 +1,66 @@
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+/* header */
+#header
+{
+    white-space: nowrap;
+    overflow-x: auto;
+    background-color: rgb(45 93 133);
+    padding:3% 6%;
+    color: white;
+}
+.header-h1
+{
+    display:inline-block;
+}
+.header-i1
+{
+    display:inline-block;
+    margin-left: 45%;
+}
+.header-i2
+{
+    display:inline-block;
+    margin-left: 5%;
+}
+/* body */
+#body
+{
+    text-align:center;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+.payment-options
+{
+    margin-bottom: 15%;
+    /* to ensure that contact dont overlap with the list */
+}
+.payment-options li{
+    width: 33.33%;
+    height:33.33%;
+    display: inline;
+    float: left;
+    
+}
+.payment-options li img{
+    width: 30%;
+    height:30%;
+    object-fit: cover;
+    border-radius: 50%;
+    border:5px solid rgb(46, 46, 95);
+    
+}
+.payment-options li img:hover{
+    transform: scale(1.2);
+    box-shadow: 10px 10px 5px grey;
+}
+/* footer */
+#footer
+{
+    text-align:center;
+    background-color: rgb(45 93 133);
+    padding:2% 4%;
+    color: white;
+}
