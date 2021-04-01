@@ -51,13 +51,13 @@
 
 
 		<label><h4><b>Email </b></h4></label>
-		<input class="form-control" type="text" name="Email" >
+		<input class="form-control" type="text" name="Email" required >
 
 		<label><h4><b>Phone</b></h4></label>
-		<input class="form-control" type="text" name="Phone" >
+		<input class="form-control" type="text" name="Phone"required >
 
 		<label><h4><b>Address</b></h4></label>
-		<input class="form-control" type="text" name="Address" >
+		<input class="form-control" type="text" name="Address" required>
 
 		<br>
 		<div style="padding-left: 100px;">
@@ -89,4 +89,3 @@
  	?>
 </body>
 </html>
-
