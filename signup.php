@@ -4,13 +4,6 @@
 <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Customer Register</title>
-    <style>
-    body{
-        background-image: url("train.jpg");
-        background-size: 100%;
-        background-attachment: fixed;
-    }
-    </style>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style1.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'> 
@@ -25,7 +18,8 @@
          }
       </script>
 </head>  
-<body style=" color: yellow;);"> 
+<body style=" color: yellow; background-image:url(train.jpg);background-size: 100%;
+    background-attachment: fixed;"> 
     <br> <br>
     <center><h1 style="color:white;"><u> TRAIN TICKET RESERVATION SYSTEM </u></h1></center>
     <center><h2 style="color:white;">User Registration Form</h2></center>
@@ -33,7 +27,7 @@
     <div class="booking-form-box" style="border: 0px solid black;">
     <div class="booking-form"  style=" background: rgba(0,0,0,0.5); width:490px;">
         <label>Username</label><br>
-        <input type="text" name="emp" placeholder="username" required><br>
+        <input type="text" name="emp" placeholder="username"  required><br>
 
         <label>Email-id</label><br>
         <input type="email" name="emailid" placeholder="email-id" id="email" required><br>
@@ -42,7 +36,7 @@
         <input type="text" name="phone" placeholder="phone" onkeypress='return restrictAlphabets(event)' pattern="\d{10}" maxlength="10"><br>
 
         <label>Age</label><br>
-        <input type="number" name="age" placeholder="age" min="0" oninput="validity.valid||(value='');" required><br>
+        <input type="number" name="age" placeholder="age" min="0" max="120" oninput="validity.valid||(value='');" required><br>
 
         <label>Aadhar Number</label><br>
         <input type="text" name="Aadhar_No" placeholder="aadhar number" onkeypress='return restrictAlphabets(event)' pattern="\d{12}" maxlength="12" required><br>
