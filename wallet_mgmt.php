@@ -5,6 +5,17 @@ add new source
 account number wallet id
 balance
 wallet pswd -->
+<?php
+$db = mysqli_connect('localhost', 'root', '') or
+        die ('Unable to connect. Check your connection parameters.');
+        mysqli_select_db($db, 'traindb' ) or die(mysqli_error($db));
+        session_start();
+        if(!isset($_SESSION['sess_user'])){  
+           header("location:home.html");
+            exit();
+        
+           }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,42 +41,68 @@ wallet pswd -->
         <!-- display sources (account bank and credit card) -->
         <div class="sources">
             <h2>Here is the list of sources you have</h2>
+            <?php
+                $user=$_SESSION['sess_user'];
+                $type_query = "SELECT * FROM wallet WHERE username='$user';";
+                $result = $db->query($type_query);
+            ?>
+                <?php 
+                $amtt=0;
+                while($rows=$result->fetch_assoc())
+                {
+                    $amtt=$amtt+$rows['wallet_amt'];
+             ?>
+                <tr>
+                  <td><?php echo $rows['Type'];?></td>  
+                </tr>
+                <?php
+                }
+                ?>
+            
         </div>
         <!-- option for add new source -->
         <div class="new-source">
             <h2>You can add your new source here, click the button below </h2>
             <button class="new-source-button btn btn-primary btn-lg" type="submit" value="Add new source">Add new source</button>
+            <div class="new-src-content"style="display:none;">
+                <form action="" method="POST">
+                    <h4>Enter your new source</h4>
+                    <input type="text" name="src"> 
+                    <h4>Enter the amount you want to transfer</h4>
+                    <input type="text" name="amt">            
+                    <button class="reset-button btn btn-primary btn-lg" type="submit" value="submit">submit</button>
+                </form>
+            </div>       
         </div>
+        <?php
+        if(isset($_POST['submit']))
+		{
+        $src=$_POST['src'];
+        $amt=$_POST['amt'];
+        $sql1= "INSERT INTO wallet (wallet_id, Type, username, wallet_amt) VALUES (NULL, '$src', '$user', '$amt');";
+        $result = $db->query($sql1);
+        if($result)
+        {
+            echo "sucessfully updated!!";
+        }
+    }
+        ?>
         <!-- display account number and corresponding wallet id -->
         <div class="wallet-display">
             <h2>Here is the list of the account numbers and wallet id for your account </h2>
         </div>
         <!-- display balance -->
         <div class="balance-display">
-            <h2>The balance in the account is</h2>
+            <h2>The balance in the account is <?php
+             echo $amtt;?></h2>
         </div>
         <!-- access to change the pswd -->
-        <div class="change-pswd">
+        <!-- <div class="change-pswd">
             <h2>Want to change wallet password, click here</h2>
             <button class="change-pswd-button btn btn-primary btn-lg" type="submit" value="Change password">Change wallet password</button>
-        </div>
+        </div> -->
         <!-- onclick to change wallet pswd -->
-        <div class="change-pswd-content">
-            <!-- i/p for username -->
-            <h4>Enter your User-Name</h4>
-            <input type="text">
-            <!-- display security qn -->
-            <!-- if correct answer option to edit -->
-            <h4>Enter your Security Question</h4>
-            <input type="text">
-            <h4>Enter your Security Answer</h4>
-            <input type="text">
-            <h4>Enter new password</h4>
-            <input type="password">
-            <h4>Confirm password</h4>
-            <input type="password"><br>
-            <input class="reset-button btn btn-primary btn-lg" type="submit" value="Reset">
-        </div>
+        
     </div>
     <!-- footer -->
     <div id="footer">
@@ -75,6 +112,10 @@ wallet pswd -->
         <h4>Email:XXX@XXX.com</h4>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="wallet_mgmt.js"></script>
+    <script >
+        $(".new-source-button").click(function(){
+            $(".new-src-content").show();
+        });
+    </script>
 </body>
 </html>
