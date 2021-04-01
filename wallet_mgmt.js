@@ -1,3 +1,3 @@
-$(".change-pswd-button").click(function(){
-    $(".change-pswd-content").show();
+$(".new-source-button").click(function(){
+    $(".new-src-content").show();
   });
