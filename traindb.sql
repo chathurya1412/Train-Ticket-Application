@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2021 at 11:44 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.1
+-- Generation Time: Apr 01, 2021 at 03:10 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,7 +62,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`User_Name`, `Pswd`, `Email`, `Gender`, `Phone`, `Age`, `Aadhar_No`, `Address`) VALUES
-('chathu', '1234', 'saichathurya1234@gmail.com', NULL, '7995327279', 20, '', '');
+('chathu', '1234', 'chathu', NULL, 'asd', 20, '', 'asd');
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,10 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`Type`) VALUES
-('Paytm');
+('aaa'),
+('Paytm'),
+('qqq'),
+('sbi');
 
 -- --------------------------------------------------------
 
@@ -101,7 +104,9 @@ CREATE TABLE `records` (
 --
 
 INSERT INTO `records` (`Book_ID`, `Train_ID`, `Book_Time`, `User_Name`, `Payment_Type`, `Dep_Time`) VALUES
-(18, 'M1', '2021-03-17 11:28:30', 'chathu', 'Paytm', '2021-04-02 12:00:00');
+(18, 'M1', '2021-03-17 11:28:30', 'chathu', 'Paytm', '2021-04-02 12:00:00'),
+(19, 'M1', '2021-03-17 18:28:58', 'chathu', 'Paytm', '2021-04-02 12:00:00'),
+(20, 'M1', '2021-03-18 12:06:27', 'chathu', 'Paytm', '2021-04-02 12:00:00');
 
 -- --------------------------------------------------------
 
@@ -151,6 +156,28 @@ INSERT INTO `trains` (`Train_ID`, `Dep_Time`, `Arr_Time`, `Train_Name`, `Src`, `
 ('M1', '2021-04-02 12:00:00', '2021-04-02 14:00:00', 'MercuryA', 'A', 'B', '2021-04-02', NULL),
 ('M2', '2021-04-01 12:00:00', '2021-04-01 14:00:00', 'MercuryA', 'Bangalore', 'Delhi', '2021-04-01', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wallet`
+--
+
+CREATE TABLE `wallet` (
+  `wallet_id` int(20) NOT NULL,
+  `Type` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `wallet_amt` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `wallet`
+--
+
+INSERT INTO `wallet` (`wallet_id`, `Type`, `username`, `wallet_amt`) VALUES
+(1, 'sbi', 'chathu', 123),
+(2, 'Paytm', 'chathu', 100),
+(3, 'qqq', 'chathu', 123);
+
 --
 -- Indexes for dumped tables
 --
@@ -196,6 +223,14 @@ ALTER TABLE `trains`
   ADD KEY `Plane_Name` (`Train_Name`);
 
 --
+-- Indexes for table `wallet`
+--
+ALTER TABLE `wallet`
+  ADD PRIMARY KEY (`wallet_id`),
+  ADD KEY `username` (`username`),
+  ADD KEY `Type` (`Type`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -203,7 +238,13 @@ ALTER TABLE `trains`
 -- AUTO_INCREMENT for table `records`
 --
 ALTER TABLE `records`
-  MODIFY `Book_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `Book_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `wallet`
+--
+ALTER TABLE `wallet`
+  MODIFY `wallet_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -222,6 +263,13 @@ ALTER TABLE `records`
 --
 ALTER TABLE `trains`
   ADD CONSTRAINT `trains_ibfk_1` FOREIGN KEY (`Train_Name`) REFERENCES `tnames` (`Train_Name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `wallet`
+--
+ALTER TABLE `wallet`
+  ADD CONSTRAINT `wallet_ibfk_1` FOREIGN KEY (`username`) REFERENCES `customer` (`User_Name`),
+  ADD CONSTRAINT `wallet_ibfk_2` FOREIGN KEY (`Type`) REFERENCES `payment` (`Type`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
