@@ -6,6 +6,7 @@
 <head>
 	<title>edit profile</title>
 	<style type="text/css">
+        
 		.form-control
 		{
 			width:250px;
@@ -21,8 +22,20 @@
 		}
 
 	</style>
+    <script type="text/javascript">
+         /*code: 48-57 Numbers*/
+         function restrictAlphabets(e) {
+             var x = e.which || e.keycode;
+             if ((x >= 48 && x <= 57))
+                 return true;
+             else
+                 return false;
+         }
+      </script>
 </head>
-<body style="background-color: #004528;">
+<!-- <body style="background-color: grey;"> -->
+<body style="background-image:url(tree.jpg);">
+
 
 	<h2 style="text-align: center;color: #fff;">Edit Information</h2>
 	<?php
@@ -40,26 +53,27 @@
 
 	?>
 
-	<div class="profile_info" style="text-align: center;">
-		<span style="color: white;">Welcome,</span>	
-		<h4 style="color: white;"><?php echo $_SESSION['sess_user']; ?></h4>
-		<button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="home.html">Back</a></button>
-	</div><br><br>
+	<div class="profile_info" style="text-align: center; ">
+		<span style="color: white; font-size:25px; font-weight:bold;">Welcome <?php echo $_SESSION['sess_user']; ?></span>	
+		
+	</div><br>
 	
 	<div class="form1">
 		<form action="" method="post" enctype="multipart/form-data">
 
 
 		<label><h4><b>Email </b></h4></label>
-		<input class="form-control" type="text" name="Email" required >
+		<input class="form-control" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="Email" >
 
 		<label><h4><b>Phone</b></h4></label>
-		<input class="form-control" type="text" name="Phone"required >
+		<input class="form-control" type="text" name="Phone" onkeypress='return restrictAlphabets(event)' pattern="\d{10}" maxlength="10" >
 
 		<label><h4><b>Address</b></h4></label>
 		<input class="form-control" type="text" name="Address" required>
 
 		<br>
+        <br>
+        <br>
 		<div style="padding-left: 100px;">
 			<button class="btn btn-default" type="submit" name="submit">save</button></div>
 	</form>
@@ -89,3 +103,4 @@
  	?>
 </body>
 </html>
+
