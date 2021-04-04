@@ -61,6 +61,7 @@ $db = mysqli_connect('localhost', 'root', '') or
             
         </div>
         <!-- option for add new source -->
+        
         <div class="new-source">
             <h2>You can add your new source here, click the button below </h2>
             <button class="new-source-button btn btn-primary btn-lg" type="submit" value="Add new source">Add new source</button>
@@ -69,24 +70,26 @@ $db = mysqli_connect('localhost', 'root', '') or
                     <h4>Enter your new source</h4>
                     <input type="text" name="src"> 
                     <h4>Enter the amount you want to transfer</h4>
-                    <input type="text" name="amt">            
-                    <button class="reset-button btn btn-primary btn-lg" type="submit" value="submit">submit</button>
+                    <input type="number" name="amt">   <br>         
+                    <input class="reset-button btn btn-primary btn-lg" type="submit" value="submit" name="submit" style="margin-top:10px;">
                 </form>
+                <?php
+                    if(isset($_POST['submit']))
+                    {
+                    $src=$_POST['src'];
+                    $amt=$_POST['amt'];
+                    $sql1= "INSERT INTO wallet (`Type`, username, wallet_amt) VALUES ('$src', '$user', '$amt');";
+                    echo "hi";
+                    $result = $db->query($sql1);
+                    if($result)
+                    {
+                        echo "sucessfully updated!!";
+                    }
+                }
+                    ?>
             </div>       
         </div>
-        <?php
-        if(isset($_POST['submit']))
-		{
-        $src=$_POST['src'];
-        $amt=$_POST['amt'];
-        $sql1= "INSERT INTO wallet (wallet_id, Type, username, wallet_amt) VALUES (NULL, '$src', '$user', '$amt');";
-        $result = $db->query($sql1);
-        if($result)
-        {
-            echo "sucessfully updated!!";
-        }
-    }
-        ?>
+        
         <!-- display account number and corresponding wallet id -->
         <div class="wallet-display">
             <h2>Here is the list of the account numbers and wallet id for your account </h2>
