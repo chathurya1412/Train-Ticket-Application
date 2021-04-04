@@ -7,19 +7,35 @@
  <head>
  	<title>Profile</title>
  	<style type="text/css">
+	    /* html{
+			scroll-behaviour:smooth;
+		} */
+	 
  		.wrapper
  		{
- 			width: 300px;
- 			margin: 0 auto;
+ 			/* width: 300px;
+ 			margin: 0 auto; */
  			color: white;
+			font-size:20px;
+			position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 400px;
+            padding: 80px 40px;
+             box-sizing: border-box;
+             background: rgba(0,0,0,0.5);
+			 
  		}
  	</style>
  </head>
- <body style="background-color: #004528; ">
+ <!-- <body style="background-color:grey; "> -->
+ <body style="background-image:url(tree.jpg);">
  	<div class="container">
  		<form action="" method="post">
  			<button class="btn btn-default" style="float: right; width: 70px;" name="submit1">Edit</button>
-			<button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="home.html">Back</a></button>
+			 <button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="home.html">Back</a></button>
  		</form>
  		<div class="wrapper">
  			<?php
@@ -46,10 +62,8 @@
  				// 	<img class='img-circle profile-img' height=110 width=120 src='images/".$_SESSION['pic']."'>
  				// </div>";
  			?>
- 			<div style="text-align: center;"> <b>Welcome, </b>
-	 			<h4>
-	 				<?php echo $_SESSION['sess_user']; ?>
-	 			</h4>
+ 			<div style="text-align: center;"> <b>Welcome <?php echo $_SESSION['sess_user']; ?> </b>
+	 			
  			</div>
  			<?php
  				echo "<b>";
