@@ -272,6 +272,10 @@ ALTER TABLE `wallet`
   ADD CONSTRAINT `wallet_ibfk_2` FOREIGN KEY (`Type`) REFERENCES `payment` (`Type`);
 COMMIT;
 
+--  for upload file option in customer 
+-- make sure to add uploads in your file to make this work :)
+ALTER TABLE 'customer' ADD 'name' VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL AFTER 'Address';
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
