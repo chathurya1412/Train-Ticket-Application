@@ -72,6 +72,7 @@ th {
 
 <div class="right"><button class="button">
 	<a href="logout1.php"  style="color:black">Logout</a></button>
+	<button class="btn btn-default" style="float: left; width: 70px; color: black ;"><a href="page1.php">Back</a></button>
 </div><br><br><br> 
 <form action="" method="POST">  	
 	<legend>  
