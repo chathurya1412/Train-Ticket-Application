@@ -36,6 +36,18 @@
 		{
 			color: white;
 		}
+        .loginBox
+        {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 800px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.5);
+        }
 
 	</style>
     <script type="text/javascript">
@@ -68,16 +80,14 @@
 		}
 
 	?>
-
-	<div class="profile_info" style="text-align: center; ">
-		<span style="color: white; font-size:25px; font-weight:bold;">Welcome <?php echo $_SESSION['sess_user']; ?></span>	
-		
-	</div><br>
 	<!-- <div class="wrapper"> -->
 	<div class="form1">
+    <div class="loginBox" style="padding-bottom: 15px; width:380px; height:595px;">
+    <!-- <div class="loginBox" style="padding-bottom: 15px; width:380px; height:495px;"> -->
+	<div class="profile_info" style="text-align: center; ">
+		<span style="color: white; font-size:25px; font-weight:bold;">Welcome <?php echo $_SESSION['sess_user']; ?></span>	
+	</div>
 		<form action="" method="post" enctype="multipart/form-data">
-
-
 		<label><h4><b>Email </b></h4></label>
 		<input class="form-control" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="Email" >
 
@@ -87,16 +97,14 @@
 		<label><h4><b>Address</b></h4></label>
 		<input class="form-control" type="text" name="Address" required>
 		<br>
-		<br>
         <br>
-		<label><b>Upload your identity information</label><br><br>
+		<label><b>Upload your identity information</b></label><br><br>
         <input type="file" name="file" style="color: white" required><br>
 		<br>
-        <br>
-        <br>
 		<div style="padding-left: 100px;">
-			<button class="btn btn-default" type="submit" name="submit">save</button></div>
+		<button class="btn btn-default" type="submit" name="submit">Save</button></div>
 	</form>
+    </div>
 	<!-- <div class="wrapper"></div> -->
 </div>
 
