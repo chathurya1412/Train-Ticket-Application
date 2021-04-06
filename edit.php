@@ -62,7 +62,7 @@
       </script>
 </head>
 <!-- <body style="background-color: grey;"> -->
-<body style="background-image:url(tree.jpg); background-repeat: no-repeat; background-size:cover;">
+<body style="background-image:url(tree.jpg);background-repeat: no-repeat;background-size:cover;">
 <!-- <div class="wrapper"></div> -->
 
 	<h2 style="text-align: center;color: 	#ffffff;">Edit Information</h2>
