@@ -81,10 +81,10 @@
 <?php  
     if(isset($_POST["submit"]))
     {  
-        echo "hello";
+        
         if(!empty($_POST['emp']) && !empty($_POST['emailid']) && !empty($_POST['phone'])&& !empty($_POST['emppass']) && !empty($_POST['empconf']) && !empty($_POST['age'])&& !empty($_POST['address'])&& !empty($_POST['gender'])&& !empty($_POST['Aadhar_No']))
         { 
-            echo "hi"; 
+             
             $emp=$_POST['emp'];
             $emailid=$_POST['emailid'];
             $phone=$_POST['phone'];
