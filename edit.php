@@ -39,7 +39,7 @@
         .loginBox
         {
 	position: absolute;
-	top: 50%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 350px;
@@ -63,9 +63,10 @@
 </head>
 <!-- <body style="background-color: grey;"> -->
 <body style="background-image:url(tree.jpg);background-repeat: no-repeat;background-size:cover;">
+<button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="profile.php">Back</a></button>
 <!-- <div class="wrapper"></div> -->
-
-	<h2 style="text-align: center;color: 	#ffffff;">Edit Information</h2>
+    <br>
+	<h2 style="text-align: center;color:#ffffff;">Edit Information</h2>
 	<?php
 		
         $db=mysqli_connect("localhost","root","","traindb");

@@ -21,7 +21,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            width: 400px;
+            width: 800px;
             height: 600px;
             padding: 80px 40px;
              box-sizing: border-box;
@@ -65,7 +65,7 @@
  			?>
  			<div style="text-align: center;"> <b>Welcome <?php echo $_SESSION['sess_user']; ?> </b>
 	 			
- 			</div>
+ 			</div><br>
  			<?php
  				echo "<b>";
  				echo "<table class='table table-bordered'>";
@@ -133,6 +133,14 @@
 	 					echo "</td>";
 	 				echo "</tr>";
 
+					 echo "<tr>";
+	 					echo "<td>";
+	 						echo "<b> Identity File:</b>";
+	 					echo "</td>";
+	 					echo "<td>";
+	 						echo $row['name'];
+	 					echo "</td>";
+	 				echo "</tr>";
 
  				echo "</table>";
  				echo "</b>";
