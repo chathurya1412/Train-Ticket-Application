@@ -98,7 +98,7 @@
 		<input class="form-control" type="text" name="Address" required>
 		<br>
         <br>
-		<label><b>Upload your identity information</b></label><br><br>
+		<label><b>Upload your identity information</b></label><br><br> 
         <input type="file" name="file" style="color: white" required><br>
 		<br>
 		<div style="padding-left: 100px;">
