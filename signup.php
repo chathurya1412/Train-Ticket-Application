@@ -34,6 +34,7 @@
     <div class="booking-form"  style=" background: rgba(0,0,0,0.5); width:490px;">
         <label>Username</label><br>
         <input type="text" name="emp" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="username" required><br>
+        <b>(please enter valid Username for KYC approval)</b><br>
         <!-- <input type="text" name="emp" placeholder="username" required><br> -->
 
         <label>Email-id</label><br>
