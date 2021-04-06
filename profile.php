@@ -22,7 +22,7 @@
             left: 50%;
             transform: translate(-50%,-50%);
             width: 400px;
-            height: 400px;
+            height: 600px;
             padding: 80px 40px;
              box-sizing: border-box;
              background: rgba(0,0,0,0.5);
@@ -70,7 +70,7 @@
  				echo "<table class='table table-bordered'>";
 	 				echo "<tr>";
 	 					echo "<td>";
-	 						echo "<b> username: </b>";
+	 						echo "<b> Username: </b>";
 	 					echo "</td>";
 
 	 					echo "<td>";
@@ -135,6 +135,8 @@
 
  				echo "</table>";
  				echo "</b>";
+				echo"<br>";
+				echo"<b>Your file is being processed for KYC purposes</b>";
  			?>
  		</div>
  	</div>

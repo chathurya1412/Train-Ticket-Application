@@ -6,7 +6,23 @@
 <head>
 	<title>edit profile</title>
 	<style type="text/css">
-        
+        .wrapper
+ 		{
+ 			/* width: 300px;
+ 			margin: 0 auto; */
+ 			color: white;
+			font-size:20px;
+			position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 600px;
+            padding: 80px 40px;
+             box-sizing: border-box;
+             background: rgba(0,0,0,0.5);
+			 
+ 		}
 		.form-control
 		{
 			width:250px;
@@ -35,9 +51,9 @@
 </head>
 <!-- <body style="background-color: grey;"> -->
 <body style="background-image:url(tree.jpg);">
+<!-- <div class="wrapper"></div> -->
 
-
-	<h2 style="text-align: center;color: #fff;">Edit Information</h2>
+	<h2 style="text-align: center;color: 	#ffffff;">Edit Information</h2>
 	<?php
 		
         $db=mysqli_connect("localhost","root","","traindb");
@@ -57,7 +73,7 @@
 		<span style="color: white; font-size:25px; font-weight:bold;">Welcome <?php echo $_SESSION['sess_user']; ?></span>	
 		
 	</div><br>
-	
+	<!-- <div class="wrapper"> -->
 	<div class="form1">
 		<form action="" method="post" enctype="multipart/form-data">
 
@@ -70,14 +86,18 @@
 
 		<label><h4><b>Address</b></h4></label>
 		<input class="form-control" type="text" name="Address" required>
-
+		<br>
+		<label><b>Upload your identity information</label><br>
+        <input type="file" name="file" style="color: white" required><br>
 		<br>
         <br>
         <br>
 		<div style="padding-left: 100px;">
 			<button class="btn btn-default" type="submit" name="submit">save</button></div>
 	</form>
+	<!-- <div class="wrapper"></div> -->
 </div>
+
 	<?php 
 
 		if(isset($_POST['submit']))
@@ -87,9 +107,18 @@
 			$emailid=$_POST['Email'];
 			$phone=$_POST['Phone'];
 			$address=$_POST['Address'];
-
-			$sql1= "UPDATE customer SET `Email`='$emailid', `Phone`='$phone', `Address`='$address' WHERE `User_Name`='".$_SESSION['sess_user']."';";
-
+			$filename=$_FILES['file']['name'];
+			$destination = 'uploads/' . $filename;
+            $extension = pathinfo($filename, PATHINFO_EXTENSION);
+			$file = $_FILES['file']['tmp_name'];
+			
+			
+			$sql1= "UPDATE customer SET `Email`='$emailid', `Phone`='$phone', `Address`='$address',`name`='$filename' WHERE `User_Name`='".$_SESSION['sess_user']."';";
+			if (!in_array($extension, ['zip', 'pdf', 'docx','jpeg','jpg','png']))
+            {
+                echo "You file extension is not allowed";
+            } 
+            move_uploaded_file($file, $destination);
 			if(mysqli_query($db,$sql1))
 			{
 				?>
