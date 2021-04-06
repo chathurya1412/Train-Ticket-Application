@@ -31,7 +31,8 @@
  	</style>
  </head>
  <!-- <body style="background-color:grey; "> -->
- <body style="background-image:url(tree.jpg);">
+ <body style="background-image:url(tree.jpg); 
+  background-repeat: no-repeat; background-size:cover;">
  	<div class="container">
  		<form action="" method="post">
  			<button class="btn btn-default" style="float: right; width: 70px;" name="submit1">Edit</button>

@@ -50,7 +50,8 @@
       </script>
 </head>
 <!-- <body style="background-color: grey;"> -->
-<body style="background-image:url(tree.jpg);">
+<body style="background-image:url(tree.jpg); 
+  background-repeat: no-repeat; background-size:cover; ">
 <!-- <div class="wrapper"></div> -->
 
 	<h2 style="text-align: center;color: 	#ffffff;">Edit Information</h2>
@@ -85,8 +86,8 @@
 		<input class="form-control" type="text" name="Phone" onkeypress='return restrictAlphabets(event)' pattern="\d{10}" maxlength="10" >
 
 		<label><h4><b>Address</b></h4></label>
-		<input class="form-control" type="text" name="Address" required>
-		<br>
+		<input class="form-control" type="text" name="Address" required><br>
+
 		<label><b>Upload your identity information</label><br>
         <input type="file" name="file" style="color: white" required><br>
 		<br>
