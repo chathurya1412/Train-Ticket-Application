@@ -38,15 +38,15 @@
 		}
         .loginBox
         {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	width: 350px;
-	height: 800px;
-	padding: 80px 40px;
-	box-sizing: border-box;
-	background: rgba(0,0,0,0.5);
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%,-50%);
+	 width: 350px;
+	 height: 800px;
+	 padding: 80px 40px;
+	 box-sizing: border-box;
+	 background: rgba(0,0,0,0.5);
         }
 
 	</style>
