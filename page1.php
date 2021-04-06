@@ -62,7 +62,9 @@ fieldset {
 <div class="right"><button class="button">
 	<a href="logout1.php"  style="color:black">Logout</a></button>
 </div><br>
-
+<div class="right"><button class="button">
+	<a href="home.html"  style="color:black">Back</a></button>
+</div><br>
 <div class="right"><button class="button">
 	<a href="view1.php"  style="color:black">View Bookings</a></button>
 </div><br>
