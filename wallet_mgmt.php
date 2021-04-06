@@ -28,19 +28,21 @@ $db = mysqli_connect('localhost', 'root', '') or
     <title>Wallet Management</title>
 </head>
 <body>
+
     <!-- header -->
     <div id="header">
         <!-- Wallet Management -->
         <h1 class=" header-h1">Wallet Management</h1>
+        <button class="btn btn-default" style="float: right; width: 100px;" ><a href="home.html">Back</a></button>
         <!-- go to main page -->
-        <i class="header-i1 fa fa-home fa-4x"></i>
+        <!-- <i class="header-i1 fa fa-home fa-4x"></i> -->
         <!-- logout -->
-        <i class="header-i2 fa fa-sign-out fa-4x"></i>
+        <!-- <i class="header-i2 fa fa-sign-out fa-4x"></i> -->
     </div>
     <div id="body">
         <!-- display sources (account bank and credit card) -->
         <div class="sources">
-            <h2>Here is the list of sources you have</h2>
+            <!-- <h2>Here is the list of sources you have</h2> -->
             <?php
                 $user=$_SESSION['sess_user'];
                 $type_query = "SELECT * FROM wallet WHERE username='$user';";
@@ -52,9 +54,9 @@ $db = mysqli_connect('localhost', 'root', '') or
                 {
                     $amtt=$amtt+$rows['wallet_amt'];
              ?>
-                <tr>
+                <!-- <tr>
                   <td><?php echo $rows['Type'];?></td>  
-                </tr>
+                </tr> -->
                 <?php
                 }
                 ?>
@@ -92,8 +94,22 @@ $db = mysqli_connect('localhost', 'root', '') or
         
         <!-- display account number and corresponding wallet id -->
         <div class="wallet-display">
-            <h2>Here is the list of the account numbers and wallet id for your account </h2>
+            <h2>Here is the list of sources with amount </h2>
         </div>
+        <
+        <?php
+        $type_query = "SELECT * FROM wallet WHERE username='$user';";
+        $result = $db->query($type_query);
+        while($row=mysqli_fetch_assoc($result)){
+            ?>
+
+            <td><b><?php echo $row['Type'];?></b></td>
+            <td><?php echo $row['wallet_amt'];?></td>
+
+        <?php
+         
+        }
+        ?>
         <!-- display balance -->
         <div class="balance-display">
             <h2>The balance in the account is <?php

@@ -31,7 +31,9 @@ if(!isset($_SESSION["sess_user"])){
      
         }  
             h1 {  
-   color: red;}
+				color: white;  
+                font-family: verdana;  
+                font-size: 100%; }
         h3 {  
     color: rgb(44,62,80);  
     font-family: verdana;  
@@ -70,7 +72,8 @@ th {
 <center><h1><u> TRAIN TICKET RESERVATION SYSTEM  </u></h1></center>
 
 <div class="right"><button class="button">
-	<a href="logout1.php"  style="color:black">Logout</a></button>
+	<a href="logout1.php" style="float: right; width: 70px;" >Logout</a></button>
+	<button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="home.html">Back</a></button>
 </div><br>
 <br><br><br>
 <center>

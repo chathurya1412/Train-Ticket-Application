@@ -25,7 +25,7 @@ if(!isset($_SESSION['sess_user']) && !isset($_SESSION['sess_aid']) && !isset($_S
     font-size: 100%;  
       
         }  
-         h2 {  
+         h1 {  
     color: white;  
     font-family: verdana;  
     font-size: 100%;  
@@ -71,8 +71,10 @@ th {
  <center><h1> TRAIN TICKET RESERVATION SYSTEM </h1></center>
 
 <div class="right"><button class="button">
-	<a href="logout1.php"  style="color:black">Logout</a></button>
-	<button class="btn btn-default" style="float: left; width: 70px; color: black ;"><a href="page1.php">Back</a></button>
+	<a href="logout1.php"  style="float: right; width: 70px; color:black; " >Logout</a></button>
+	<button class="button">
+	<a href="page1.php"  style="float: right; width: 70px; color:black; " >Back</a></button>
+	
 </div><br><br><br> 
 <form action="" method="POST">  	
 	<legend>  
