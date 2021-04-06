@@ -87,7 +87,9 @@
 		<label><h4><b>Address</b></h4></label>
 		<input class="form-control" type="text" name="Address" required>
 		<br>
-		<label><b>Upload your identity information</label><br>
+		<br>
+        <br>
+		<label><b>Upload your identity information</label><br><br>
         <input type="file" name="file" style="color: white" required><br>
 		<br>
         <br>
