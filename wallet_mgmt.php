@@ -81,7 +81,7 @@ $db = mysqli_connect('localhost', 'root', '') or
                     $src=$_POST['src'];
                     $amt=$_POST['amt'];
                     $sql1= "INSERT INTO wallet (`Type`, username, wallet_amt) VALUES ('$src', '$user', '$amt');";
-                    echo "hi";
+                    
                     $result = $db->query($sql1);
                     if($result)
                     {
@@ -96,7 +96,7 @@ $db = mysqli_connect('localhost', 'root', '') or
         <div class="wallet-display">
             <h2>Here is the list of sources with amount </h2>
         </div>
-        <
+        
         <?php
         $type_query = "SELECT * FROM wallet WHERE username='$user';";
         $result = $db->query($type_query);
