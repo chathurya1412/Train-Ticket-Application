@@ -141,8 +141,14 @@
   
                 $result=mysqli_multi_query($con,$sql);  
                 if($result)
-                {  
-                echo "<p style='color:yellow;'>" . "User Account Successfully Created.. Please Login.."  . "</p>";  
+                { 
+                    ?>
+					<script type="text/javascript">
+						alert("User Account Successfully Created.. Please Login..");
+						window.location="login.php";
+					</script>
+				<?php 
+                //echo "<p style='color:yellow;'>" . "User Account Successfully Created.. Please Login.."  . "</p>";  
                 //header("Location: login.php");
                 } 
                 else 
