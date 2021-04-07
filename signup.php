@@ -81,10 +81,10 @@
 <?php  
     if(isset($_POST["submit"]))
     {  
-        echo "hello";
+        
         if(!empty($_POST['emp']) && !empty($_POST['emailid']) && !empty($_POST['phone'])&& !empty($_POST['emppass']) && !empty($_POST['empconf']) && !empty($_POST['age'])&& !empty($_POST['address'])&& !empty($_POST['gender'])&& !empty($_POST['Aadhar_No']))
         { 
-            echo "hi"; 
+           
             $emp=$_POST['emp'];
             $emailid=$_POST['emailid'];
             $phone=$_POST['phone'];
@@ -142,8 +142,8 @@
                 $result=mysqli_multi_query($con,$sql);  
                 if($result)
                 {  
-                // echo "<p style='color:yellow;'>" . "User Account Successfully Created.. Please Login.."  . "</p>";  
-                header("Location: login.php");
+                echo "<p style='color:yellow;'>" . "User Account Successfully Created.. Please Login.."  . "</p>";  
+                //header("Location: login.php");
                 } 
                 else 
                 {  
@@ -155,13 +155,15 @@
             //{  
             //    echo "That Employee name already exists! Please try again with another.";  
             //}  
-  
+            
         }
         else 
         {  
             echo "All fields are required!";  
-        }  
+        }
+        
     }  
+    
 ?>  
 </body>  
 </html>   
