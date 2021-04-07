@@ -73,7 +73,7 @@ th {
 
 <div class="right"><button class="button">
 	<a href="logout1.php" style="float: right; width: 70px;" >Logout</a></button>
-	<button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="home.html">Back</a></button>
+	<button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="page1.php">Back</a></button>
 </div><br>
 <br><br><br>
 <center>
