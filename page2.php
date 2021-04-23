@@ -112,7 +112,8 @@ $sql="SELECT Train_ID,Dep_Time,Arr_Time,Train_Name,Src,Dstn,Dep_Date,Fare FROM t
 			echo "<th>From</th>";
 			echo "<th>To</th>";
 			echo "<th>Fare</th>";
-			//echo "<th>Action</th>";
+			
+			
 			echo "</tr>";
 			while($row=mysqli_fetch_assoc($result)){ ?>
 
@@ -143,18 +144,15 @@ $sql="SELECT Train_ID,Dep_Time,Arr_Time,Train_Name,Src,Dstn,Dep_Date,Fare FROM t
 			  <td><?php echo $row['Src'];?></td>
 			  <td><?php echo $row['Dstn'];?></td>
 			  <td><?php echo $row['Fare'];?></td>
+			  
+			  
 			  <?php echo "</tr>";?>
 <?php
                 }
 				echo "</table><br><br>";
 				?><b> Train id: &ensp; &ensp; </b><input type="text" name="train_id"> &ensp; &ensp;
 				<b> Dep_Time: &ensp; &ensp; </b><input type="text" name="dptime"> &ensp; &ensp;
-				<select name="Booking_Method">
-  					<option value="Paytm">Paytm</option>
-  					<option value="Card">Credit Card</option>
-  					<option value="UPI">UPI</option>
-  					<option value="Wallet">Wallet</option>
-				</select>
+				
 				<input type="submit" value="Book" name="book" />
 			  <?php
 	}
@@ -241,6 +239,7 @@ mysqli_close($con);}
    }}}
 	?><br><br><br>
  <input type="button" value="Back" onclick="location.href='page1.php';" /><br><br>
+ <input type="button" value="Proceed to Billing" onclick="location.href='payment_mgmt.php';" /><br><br>
 </center>
 <p align="right"> Page 2 </p>
 </fieldset>

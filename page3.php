@@ -72,8 +72,10 @@ th {
 
 <div class="right"><button class="button">
 	<a href="feedback1.php"  style="float: right; width: 70px; color:black; " >Logout</a></button>
+	<br>
 	<button class="button">
-	<a href="page1.php"  style="float: right; width: 70px; color:black; " >Back</a></button>
+	<a href="page1.php"  style="float: right; width: 70px; color:black; " >Book Another Train</a></button>
+	
 	
 </div><br><br><br> 
 <form action="" method="POST">  	
