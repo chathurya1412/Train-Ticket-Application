@@ -44,10 +44,6 @@
 	{
 		$Username = $_POST['Username'];
 		$pass = $_POST['pass'];
-		
-		
-
-
 		$sql="SELECT * FROM customer WHERE User_Name='".$Username."' AND Pswd='".$pass."'";
     	$query=mysqli_query($con,$sql);  
     	$numrows=mysqli_num_rows($query);  

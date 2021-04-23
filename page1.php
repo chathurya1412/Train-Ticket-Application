@@ -60,7 +60,7 @@ fieldset {
 <div class="right"> 
 </div><br><br>
 <div class="right"><button class="button">
-	<a href="logout1.php"  style="color:black">Logout</a></button>
+	<a href="feedback1.php"  style="color:black">Logout</a></button>
 </div><br>
 <div class="right"><button class="button">
 	<a href="home.html"  style="color:black">Back</a></button>

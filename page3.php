@@ -71,7 +71,7 @@ th {
  <center><h1> TRAIN TICKET RESERVATION SYSTEM </h1></center>
 
 <div class="right"><button class="button">
-	<a href="logout1.php"  style="float: right; width: 70px; color:black; " >Logout</a></button>
+	<a href="feedback1.php"  style="float: right; width: 70px; color:black; " >Logout</a></button>
 	<button class="button">
 	<a href="page1.php"  style="float: right; width: 70px; color:black; " >Back</a></button>
 	
