@@ -150,8 +150,8 @@ $sql="SELECT Train_ID,Dep_Time,Arr_Time,Train_Name,Src,Dstn,Dep_Date,Fare FROM t
 <?php
                 }
 				echo "</table><br><br>";
-				?><b> Train id: &ensp; &ensp; </b><input type="text" name="train_id"> &ensp; &ensp;
-				<b> Dep_Time: &ensp; &ensp; </b><input type="text" name="dptime"> &ensp; &ensp;
+				?><b> Train id: &ensp; &ensp; </b><input type="text" name="train_id" required> &ensp; &ensp;
+				<b> Dep_Time: &ensp; &ensp; </b><input type="text" name="dptime" required> &ensp; &ensp;
 				
 				<input type="submit" value="Book" name="book" />
 			  <?php
@@ -170,7 +170,7 @@ if(isset($_POST['book']))
 {
 	if(!empty($_POST['train_id']) && !empty($_POST['dptime']))
 	{
-		$flight_id=$_POST['train_id'];
+		$train_id=$_POST['train_id'];
 		$dptime=$_POST['dptime'];
 		
 		// $payment = $_POST['Booking_Method'];
@@ -188,11 +188,15 @@ if(isset($_POST['book']))
 					$seats1 = mysqli_fetch_assoc($seats);
 					$tot_seats = (int)$seats1['Seats'];
 
-					$fid=$row['Train_ID'];
-					$var = $row['Dep_Time'];
-					$booked_seats = "SELECT * FROM trains where Train_ID='$fid' and Dep_Time='$var'";//we changed to aircraft from records
+					$train_id=$row['Train_ID'];
+					$dptime = $row['Dep_Time'];
+					$booked_seats = "SELECT * FROM trains where Train_ID='$train_id' and Dep_Time='$dptime'";//we changed to aircraft from records
 					$res = mysqli_query($con,$booked_seats);
 					$numseats = mysqli_num_rows($res);
+					if(!$numseats)
+					{
+						echo "Enter valid TrainId or Departure time";
+					}
 					$availSeats = $tot_seats-$numseats;
 		//echo $availSeats;
 
