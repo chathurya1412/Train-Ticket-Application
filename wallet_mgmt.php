@@ -93,7 +93,7 @@ $db = mysqli_connect('localhost', 'root', '') or
                     <h4>Enter your new source</h4>
                     <input type="text" name="src"> 
                     <h4>Enter the amount you want to transfer</h4>
-                    <input type="number" name="amt">   <br>         
+                    <input type="number" name="amt"  min="0" max="50000">   <br>         
                     <input class="reset-button btn btn-primary btn-lg" type="submit" value="submit" name="submit" style="margin-top:10px;">
                 </form>
                 <?php
