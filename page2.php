@@ -173,7 +173,7 @@ if(isset($_POST['book']))
 		$flight_id=$_POST['train_id'];
 		$dptime=$_POST['dptime'];
 		
-		$payment = $_POST['Booking_Method'];
+		// $payment = $_POST['Booking_Method'];
 
   		$con=@mysqli_connect('localhost','root','','traindb') or die(mysql_error());
 
@@ -225,10 +225,10 @@ $sql1 = "SELECT Book_ID FROM records WHERE Train_ID='$fid' AND Dep_Time='$dptime
 			$bookid= $row1['Book_ID'];
 
 	$_SESSION['sess_user']=$user;
-	$_SESSION['sess_aid']=$aid;
+	// $_SESSION['sess_aid']=$aid;
 	$_SESSION['sess_bookid']=$bookid;
 
-	header("Location: page3.php");// changed for payment
+	// header("Location: page3.php");// changed for payment
 }
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($con);
