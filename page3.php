@@ -101,7 +101,7 @@ echo "<table border='1'>";
 		echo "<th>Username</th>";
 		echo "<th>Booking id</th>";
 		echo "<th>Departure date</th>";
-		echo "<th>Pyment Type</th>";
+		// echo "<th>Pyment Type</th>";
 		echo "<th>Pid</th>";
 		echo "<th>Pickup</th>";
 		echo "<th>Destination</th>";
@@ -120,7 +120,7 @@ echo "<table border='1'>";
               <td><b><?php echo $row['User_Name'];?></b></td>
 			  <td><?php echo $row['Book_ID'];?></td>
 			  <td><b><?php echo $row['Dep_Time'];?></b></td>
-			  <td><b><?php echo $row['Payment_Type'];?></b></td>			  
+			  <!-- <td><b><?php echo $row['Payment_Type'];?></b></td>			   -->
 			  <td><?php echo $row['Train_ID'];?></td>
 			  <td><b><?php echo $row1['Src'];?></b></td> 
 			  <td><b><?php echo $row1['Dstn'];?></b></td>

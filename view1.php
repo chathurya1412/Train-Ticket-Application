@@ -1,15 +1,21 @@
 <?php   
-session_start();  
-if(!isset($_SESSION["sess_user"])){  
-    if ($_SESSION["sess_user"]==""){
-		?>
-		<script>
-			window.alert('login first');
-			window.history.back();
-		</script>
-		<?php 
-	}	
-}
+// session_start();  
+// if(!isset($_SESSION["sess_user"])){  
+//     if ($_SESSION["sess_user"]==""){
+// 		?>
+// 		<script>
+// 			window.alert('login first');
+// 			window.history.back();
+// 		</script>
+// 		<?php 
+// 	}	
+// }
+session_start();
+if(!isset($_SESSION['sess_user']) && !isset($_SESSION['sess_aid']) && !isset($_SESSION['sess_bookid'])){  
+   header("location:page2.php");
+					exit();
+
+   } else {
 ?> 
 <!doctype html>	
 <html>  
@@ -69,6 +75,7 @@ th {
 
 </head>  
 <body>  
+
 <center><h1><u> TRAIN TICKET RESERVATION SYSTEM  </u></h1></center>
 
 <div class="right"><button class="button">
@@ -100,7 +107,7 @@ echo "<table border='1'>";
 		echo "<th>Username</th>";
 		echo "<th>Booking id</th>";
 		echo "<th>Departure date</th>";
-		echo "<th>Pyment Type</th>";
+		// echo "<th>Pyment Type</th>";
 		echo "<th>Pid</th>";
 		echo "<th>Pickup</th>";
 		echo "<th>Destination</th>";
@@ -119,7 +126,7 @@ echo "<table border='1'>";
               <td><b><?php echo $row['User_Name'];?></b></td>
 			  <td><?php echo $row['Book_ID'];?></td>
 			  <td><b><?php echo $row['Dep_Time'];?></b></td>
-			  <td><b><?php echo $row['Payment_Type'];?></b></td>			  
+			  <!-- <td><b><?php echo $row['Payment_Type'];?></b></td>			   -->
 			  <td><?php echo $row['Train_ID'];?></td>
 			  <td><b><?php echo $row1['Src'];?></b></td>
 			  <td><b><?php echo $row1['Dstn'];?></b></td>
@@ -134,16 +141,29 @@ echo "<table border='1'>";
 }
  	
 ?>
-<br><br>
-
+<br>
+<b>Booking Id: &ensp; &ensp; </b><input type="text" name="book_id"> &ensp; &ensp;
+<input type="submit" value="cancel" name="cancel" /><br><br>
+<form action="" method="POST"> 
+<input type="button" value="edit" name="edit" onclick="location.href='editbook.php';" /><br><br>
+</form>
 <?php
-//if(isset($_POST["view"])){
-//$con=@mysqli_connect('localhost','root','','airline') or die(mysql_error());  
-//$result=mysqli_query($con,"CALL no_of_Users") or die("Query Fail:".mysql_error());
-//while($row=mysqli_fetch_array($result)){
-	//echo $row[0];
-//}
-//}
+if(isset($_POST['cancel']))
+{
+	if(!empty($_POST['book_id']))
+	{
+		$book_id=$_POST['book_id'];
+		$con=@mysqli_connect('localhost','root','','traindb') or die(mysql_error());
+		$sql1="delete from records where User_Name='$usrname' and Book_ID='$book_id'";
+		if (mysqli_query($con, $sql1)) {
+			echo "Record deleted successfully";
+		} else {
+			echo "Error deleting record: ";
+		}
+		
+	}
+}
+}
 ?>
 <br><br>
 

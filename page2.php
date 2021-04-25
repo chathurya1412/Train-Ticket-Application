@@ -168,7 +168,7 @@ $user=$_SESSION['sess_user'];
 
 if(isset($_POST['book']))
 {
-	if(!empty($_POST['train_id']) && !empty($_POST['dptime']) && !empty($_POST['Booking_Method']))
+	if(!empty($_POST['train_id']) && !empty($_POST['dptime']))
 	{
 		$flight_id=$_POST['train_id'];
 		$dptime=$_POST['dptime'];
@@ -215,7 +215,7 @@ if(isset($_POST['book']))
 		$today = date('Y-m-d H:i:s');
 
 
-$sql="INSERT INTO records (Train_ID,Dep_Time,Book_Time,User_Name,Payment_Type) values('$fid','$dptime','$today','$user','$payment')";
+$sql="INSERT INTO records (Train_ID,Dep_Time,Book_Time,User_Name) values('$fid','$dptime','$today','$user')";
 $sql1 = "SELECT Book_ID FROM records WHERE Train_ID='$fid' AND Dep_Time='$dptime' AND Book_Time='$today'";
 	if ($result=mysqli_query($con, $sql)) {
 
