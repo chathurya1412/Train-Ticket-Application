@@ -160,7 +160,7 @@ $sql="SELECT Train_ID,Dep_Time,Arr_Time,Train_Name,Src,Dstn,Dep_Date,Fare FROM t
 	mysqli_free_result($result);
 }
 else{
-        echo "No planes matching your requirements were found.";
+        echo "No trains matching your requirements were found.";
 
 }
 
