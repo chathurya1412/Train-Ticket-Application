@@ -48,9 +48,9 @@ if(!isset($_SESSION['sess_user'])){
         <!-- Payment Management -->
         <h1 class=" header-h1">Payment Management</h1>
         <!-- go to main page -->
-        <i class="header-i1 fa fa-home fa-4x"></i>
+        <a style="color:white;" class="header-i1 fa fa-home fa-4x" href="home.html"></a>
         <!-- logout -->
-        <i class="header-i2 fa fa-sign-out fa-4x"></i>
+        <a style="color:white;" class="header-i2 fa fa-sign-out fa-4x" href="logout1.php"></a>
     </div>
     <div id="body">
         <div class="section1">
