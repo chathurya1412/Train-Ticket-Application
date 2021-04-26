@@ -156,6 +156,7 @@ $sql="SELECT Train_ID,Dep_Time,Arr_Time,Train_Name,Src,Dstn,Dep_Date,Fare FROM t
 				<input type="submit" value="Book" name="book" />
 			  <?php
 	}
+	
 
 	mysqli_free_result($result);
 }

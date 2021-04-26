@@ -57,7 +57,7 @@ if(!isset($_SESSION['sess_user'])){
             <h2>Here are your payment details</h2>
         </div>
         <div class="amount-details">
-            <h3>Amount Paid:</h3><h4>Rs. 500</h4>
+            <h3>Amount To be Paid:</h3><h4>Rs. 500</h4>
             <!-- display the amount details here after calculation -->
             <input type="button" value="Ticket Details" style="float: left; width: 140px;" onclick="location.href='page3.php';" /><br><br>
         </div>

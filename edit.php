@@ -93,7 +93,8 @@
 		<input class="form-control" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required name="Email" >
 
 		<label><h4><b>Phone</b></h4></label>
-		<input class="form-control" type="text" name="Phone" required onkeypress='return restrictAlphabets(event)' pattern="\d{10}" maxlength="10" >
+		<input class="form-control" type="text" name="Phone" onkeypress='return restrictAlphabets(event)' pattern="\d{10}" maxlength="10" required>
+		<!-- <input class="form-control" type="text" name="Phone" required onkeypress='return restrictAlphabets(event)' pattern="\d{10}" maxlength="10" > -->
 
 		<label><h4><b>Address</b></h4></label>
 		<input class="form-control" type="text" name="Address" required>
