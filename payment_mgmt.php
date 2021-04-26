@@ -41,6 +41,7 @@ if(!isset($_SESSION['sess_user'])){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Payment Management</title>
+    
 </head>
 <body>
     <div id="header">
@@ -58,6 +59,7 @@ if(!isset($_SESSION['sess_user'])){
         <div class="amount-details">
             <h3>Amount To be Paid:</h3><h4>Rs. 500</h4>
             <!-- display the amount details here after calculation -->
+            <input type="button" value="Ticket Details" style="float: left; width: 140px;" onclick="location.href='page3.php';" /><br><br>
         </div>
         <div class="payment-mode">
        <?php

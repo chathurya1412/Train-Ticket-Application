@@ -143,11 +143,23 @@ echo "<table border='1'>";
 ?>
 <br>
 <b>Booking Id: &ensp; &ensp; </b><input type="text" name="book_id"> &ensp; &ensp;
-<input type="submit" value="cancel" name="cancel" /><br><br>
-<form action="" method="POST"> 
-<input type="button" value="edit" name="edit" onclick="location.href='editbook.php';" /><br><br>
+<input type="submit" value="Cancel" name="cancel" /><br><br>
+<form action="" method="post">
+	 <!-- <b>Booking Id: &ensp; &ensp; </b><input type="text" name="book_id" required> &ensp; &ensp; -->
+	 <button class="btn btn-default" name="submit1">Edit</button>
 </form>
 <?php
+
+ 				if(isset($_POST['submit1']))
+ 				{
+ 					?>
+ 						<script type="text/javascript">
+ 							window.location="editbook.php"
+ 						</script>
+					<?php
+				 }
+
+
 if(isset($_POST['cancel']))
 {
 	if(!empty($_POST['book_id']))
