@@ -36,7 +36,7 @@
  	<div class="container">
  		<form action="" method="post">
  			<button class="btn btn-default" style="float: right; width: 70px;" name="submit1">Edit</button>
-			 <button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="home.html">Back</a></button>
+			 <button class="btn btn-default" style="float: left; width: 70px;" name="submit2"><a href="home.php">Back</a></button>
  		</form>
  		<div class="wrapper">
  			<?php

@@ -16,7 +16,7 @@ $db = mysqli_connect('localhost', 'root', '') or
         mysqli_select_db($db, 'traindb' ) or die(mysqli_error($db));
         session_start();
         if(!isset($_SESSION['sess_user'])){  
-           header("location:home.html");
+           header("location:home.php");
             exit();
         
            }
@@ -38,7 +38,7 @@ $db = mysqli_connect('localhost', 'root', '') or
     <div id="header">
         <!-- Wallet Management -->
         <h1 class=" header-h1">Wallet Management</h1>
-        <button class="btn btn-default" style="float: right; width: 100px;" ><a href="home.html">Back</a></button>
+        <button class="btn btn-default" style="float: right; width: 100px;" ><a href="home.php">Back</a></button>
         <!-- go to main page -->
         <!-- <i class="header-i1 fa fa-home fa-4x"></i> -->
         <!-- logout -->

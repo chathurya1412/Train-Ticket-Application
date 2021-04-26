@@ -72,7 +72,7 @@
 
      
     			/* Redirect browser changed from profile.php*/  
-    			header("Location: home.html");  
+    			header("Location: home.php");  
     		  
     	} 
 		
