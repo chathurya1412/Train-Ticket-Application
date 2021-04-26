@@ -68,8 +68,10 @@ if(!isset($_SESSION['sess_user'])){
                 echo "<h2>" ."Billing successfully done. Congratulations your train is booked.". "</h2>";
 
                 $amtt=$amtt-500;
-                $sql4= "UPDATE total SET  `amt`='$amtt' where `User_name`='".$user."';";
+                $sql4= "UPDATE total SET  `amt`='$amtt' where `user_name`='".$user."';";
                 $result2 = $db->query($sql4);
+
+                
         
             }
             else{
@@ -83,7 +85,9 @@ if(!isset($_SESSION['sess_user'])){
                 <li><img src="https://png.pngtree.com/png-clipart/20190904/original/pngtree-orange-wallet-icon-png-image_4462385.jpg" alt="" title="Your wallet"></li>
                 <li><img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202011/Screenshot_2020-11-05_at_5.14._1200x768.png?qbPeEkmH2KWK1YfUw65UmVr8EjYDRPgb&size=770:433" alt="" title="Google Pay" style="padding-top:5%;padding-bottom:5%"></li>
             </ul> -->
-
+<?php
+            $_SESSION['amt']=$amtt;
+            ?>
         </div>
     </div>
     <div id="footer">
