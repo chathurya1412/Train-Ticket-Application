@@ -19,7 +19,8 @@ $db = mysqli_connect('localhost', 'root', '') or
 				<p>User Name</p>
 				<input style="color:yellow;" type="text" name="Username" placeholder="Enter User Name">
 				<p>New Password</p>
-				<input style="color:yellow;" type="Password" name="pass" placeholder="Enter Password" id="myInput">
+				<!-- <input style="color:yellow;" type="Password" name="pass" placeholder="Enter Password" id="myInput"> -->
+				<input style="color:yellow;" type="Password" name="pass" placeholder="Enter Password" id="myInput" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
 				<input type="checkbox" onclick="myFunction()" style="width:20px;"><b style="color:white;">Show Password</b>
 
            <script>
