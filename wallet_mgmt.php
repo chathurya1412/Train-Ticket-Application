@@ -15,7 +15,7 @@ $db = mysqli_connect('localhost', 'root', '') or
         die ('Unable to connect. Check your connection parameters.');
         mysqli_select_db($db, 'traindb' ) or die(mysqli_error($db));
         session_start();
-        if(!isset($_SESSION['sess_user'])){  
+        if(!isset($_SESSION['sess_user']) && !isset($_SESSION['amt'])){  
            header("location:home.html");
             exit();
         
@@ -49,6 +49,7 @@ $db = mysqli_connect('localhost', 'root', '') or
         <div class="sources">
             <!-- <h2>Here is the list of sources you have</h2> -->
             <?php
+                $a=$_SESSION['amt'];
                 $user=$_SESSION['sess_user'];
     
                 $type_query = "SELECT * FROM wallet WHERE username='$user';";
@@ -67,17 +68,18 @@ $db = mysqli_connect('localhost', 'root', '') or
                 <?php
                 }
                
-                $sql3="SELECT * FROM total WHERE `User_name`='".$user."'";
+                $sql3="SELECT * FROM total WHERE `user_name`='".$user."'";
                 $query=mysqli_query($db,$sql3);  
                 $numrows=mysqli_num_rows($query); 
                 if($numrows==0) 
                 {
-                $sql2= "INSERT INTO total (`User_name`, `amt`) VALUES ('$user', '$amtt');";
+                $sql2= "INSERT INTO total (`user_name`, `amt`) VALUES ('$user', '$amtt');";
                 $result1 = $db->query($sql2);
                 }
                 else
-                {
-                $sql4= "UPDATE total SET  `amt`='$amtt' where `User_name`='".$user."';";
+                 {
+                
+                $sql4= "UPDATE total SET  `amt`='$a' where `user_name`='".$user."';";
                 $result2 = $db->query($sql4);
                 }
                 ?>
@@ -118,7 +120,7 @@ $db = mysqli_connect('localhost', 'root', '') or
         </div>
         
         <!-- display account number and corresponding wallet id -->
-        <div class="wallet-display">
+        <!-- <div class="wallet-display">
             <h2>Here is the list of sources with amount </h2>
         </div>
         
@@ -135,22 +137,17 @@ $db = mysqli_connect('localhost', 'root', '') or
         <?php
         
         }
-        ?>
+        ?> -->
         <!-- display balance -->
         <div class="balance-display">
-            <h2>The total funds from diffferent sources is in the account is <?php
-             echo $amtt;?></h2>
+            <h2>The total funds from diffferent sources is in the account is</h2>
             <?php
-            $total="SELECT amt from total where `User_name`='$user';";
-            $result1 = $db->query($total);
-            
-            while($row1=mysqli_fetch_assoc($result1)){
-            
-    
-              // echo $row1['amt'];
-            
-            }
+            $total="SELECT * from total where `user_name`='$user';";
+            $result2 = $db->query($total);
+            $row1=$result2->fetch_assoc();
+            echo $row1['amt'];
             ?>
+            
            
           
              
