@@ -168,7 +168,7 @@ if(isset($_POST['cancel']))
 		$con=@mysqli_connect('localhost','root','','traindb') or die(mysql_error());
 		$sql1="delete from records where User_Name='$usrname' and Book_ID='$book_id'";
 		if (mysqli_query($con, $sql1)) {
-			echo "Record deleted successfully";
+			echo "<b style='color:yellow;'>"."Record deleted successfully"."</b>";
 		} else {
 			echo "Error deleting record: ";
 		}
