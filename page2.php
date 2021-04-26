@@ -150,12 +150,13 @@ $sql="SELECT Train_ID,Dep_Time,Arr_Time,Train_Name,Src,Dstn,Dep_Date,Fare FROM t
 <?php
                 }
 				echo "</table><br><br>";
-				?><b> Train id: &ensp; &ensp; </b><input type="text" name="train_id"> &ensp; &ensp;
-				<b> Dep_Time: &ensp; &ensp; </b><input type="text" name="dptime"> &ensp; &ensp;
+				?><b> Train id: &ensp; &ensp; </b><input type="text" name="train_id" required> &ensp; &ensp;
+				<b> Dep_Time: &ensp; &ensp; </b><input type="text" name="dptime" required> &ensp; &ensp;
 				
 				<input type="submit" value="Book" name="book" />
 			  <?php
 	}
+	
 
 	mysqli_free_result($result);
 }
