@@ -188,6 +188,9 @@ if(isset($_POST['book']))
 					$seats1 = mysqli_fetch_assoc($seats);
 					$tot_seats = (int)$seats1['Seats'];
 
+					
+					if($fid==$train_id && $var==$dptime)
+					{
 					$train_id=$row['Train_ID'];
 					$dptime = $row['Dep_Time'];
 					$booked_seats = "SELECT * FROM trains where Train_ID='$train_id' and Dep_Time='$dptime'";//we changed to aircraft from records
@@ -239,6 +242,11 @@ $sql1 = "SELECT Book_ID FROM records WHERE Train_ID='$fid' AND Dep_Time='$dptime
 }
 
 mysqli_close($con);}
+					}
+				   else{
+					echo "Enter valid Train ID or Departure Time" ;
+				}
+					
 
    }}}
 	?><br><br><br>

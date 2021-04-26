@@ -71,7 +71,7 @@ th {
  <center><h1> TRAIN TICKET RESERVATION SYSTEM </h1></center>
 
 <div class="right"><button class="button">
-	<a href="feedback1.php"  style="float: right; width: 70px; color:black; " >Logout</a></button>
+	<a href="feedback1.php"  style="float: right; width: 70px; color:black; ">Logout</a></button>
 	<br>
 	<button class="button">
 	<a href="page1.php"  style="float: right; width: 70px; color:black; " >Book Another Train</a></button>
@@ -101,11 +101,9 @@ echo "<table border='1'>";
 		echo "<th>Username</th>";
 		echo "<th>Booking id</th>";
 		echo "<th>Departure date</th>";
-		// echo "<th>Pyment Type</th>";
 		echo "<th>Pid</th>";
 		echo "<th>Pickup</th>";
 		echo "<th>Destination</th>";
-		//echo "<th>Email</th>";
 		echo "<th>Fare</th>";
 		echo "</tr>";
 		while($row=mysqli_fetch_assoc($result)){ 
@@ -134,9 +132,6 @@ echo "<table border='1'>";
 //}
 }
 	?>
-	
-	<!--<br><br> <input type="submit" value="Cancel Flight" name="cancel" /><br><br>-->
-	<!--<br><br><input type="submit" value="Cancel Flight" name="cancel" onclick="myFunction()"/>-->
 
 <p id="demo"></p>
 
