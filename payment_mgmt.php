@@ -50,7 +50,7 @@ if(!isset($_SESSION['sess_user'])){
         <!-- go to main page -->
         <a style="color:white;" class="header-i1 fa fa-home fa-4x" href="home.php"></a>
         <!-- logout -->
-        <a style="color:white;" class="header-i2 fa fa-sign-out fa-4x" href="logout1.php"></a>
+        <a style="color:white;" class="header-i2 fa fa-sign-out fa-4x" href="feedback1.php"></a>
     </div>
     <div id="body">
         <div class="section1">
