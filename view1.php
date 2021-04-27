@@ -166,16 +166,23 @@ if(isset($_POST['cancel']))
 	{
 		$con=@mysqli_connect('localhost','root','','traindb') or die(mysql_error());
 		$book_id=$_POST['book_id'];
-		$s="SELECT * from records where User_Name='$usrname'";
-		$result1=mysqli_query($con,$query1);    
-		$row1=mysqli_fetch_assoc($result1);
-		
+		$s="SELECT * from records where User_Name='$usrname' and Book_ID='$book_id'";
+		$result1=mysqli_query($con,$s);    
+		// $row1=mysqli_fetch_assoc($result1);
+		$numrows1=mysqli_num_rows($result1);  
+		if($numrows1>0){
+        
 		$sql1="delete from records where User_Name='$usrname' and Book_ID='$book_id'";
 		if (mysqli_query($con, $sql1)) {
 			echo "<b style='color:yellow;'>"."Record deleted successfully"."</b>";
 		} else {
 			echo "Error deleting record: ";
 		}
+	}
+        else
+	{
+		echo "<b style='color:yellow;'>"."Enter valid Book ID"."</b>";
+	}
 		
 	}
 }
