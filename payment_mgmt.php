@@ -70,6 +70,8 @@ if(!isset($_SESSION['sess_user'])){
                 $amtt=$amtt-500;
                 $sql4= "UPDATE total SET  `amt`='$amtt' where `user_name`='".$user."';";
                 $result2 = $db->query($sql4);
+
+                
         
             }
             else{

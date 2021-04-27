@@ -16,7 +16,7 @@ $db = mysqli_connect('localhost', 'root', '') or
         mysqli_select_db($db, 'traindb' ) or die(mysqli_error($db));
         session_start();
         if(!isset($_SESSION['sess_user']) && !isset($_SESSION['amt'])){  
-           header("location:home.html");
+           header("location:home.php");
             exit();
         
            }
