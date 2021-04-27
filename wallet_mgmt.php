@@ -38,7 +38,7 @@ $db = mysqli_connect('localhost', 'root', '') or
     <div id="header">
         <!-- Wallet Management -->
         <h1 class=" header-h1">Wallet Management</h1>
-        <button class="btn btn-default" style="float: right; width: 100px;" ><a href="home.html">Back</a></button>
+        <button class="btn btn-default" style="float: right; width: 100px;" ><a href="home.php">Back</a></button>
         <!-- go to main page -->
         <!-- <i class="header-i1 fa fa-home fa-4x"></i> -->
         <!-- logout -->
@@ -63,10 +63,14 @@ $db = mysqli_connect('localhost', 'root', '') or
                     $amtt=$amtt+$rows['wallet_amt'];
              ?>
                 <!-- <tr>
-                  <td><?php echo $rows['Type'];?></td>  
+                <td><?php echo $rows['wallet_amt'];?></td>  
                 </tr> -->
                 <?php
                 }
+            ?>
+                <h2>The total funds from diffferent sources before booking</h2>
+                <?php
+                echo "$amtt";
                
                 $sql3="SELECT * FROM total WHERE `user_name`='".$user."'";
                 $query=mysqli_query($db,$sql3);  
@@ -95,11 +99,7 @@ $db = mysqli_connect('localhost', 'root', '') or
                     <h4>Enter your new source</h4>
                     <input type="text" name="src"> 
                     <h4>Enter the amount you want to transfer</h4>
-<<<<<<< HEAD
                     <input type="number" min="0" max="50000" name="amt">   <br>         
-=======
-                    <input type="number" name="amt"  min="0" max="50000">   <br>         
->>>>>>> 9ba3a4916235f774f8e8f1d223335768018bb6ba
                     <input class="reset-button btn btn-primary btn-lg" type="submit" value="submit" name="submit" style="margin-top:10px;">
                 </form>
                 <?php
@@ -140,12 +140,13 @@ $db = mysqli_connect('localhost', 'root', '') or
         ?> -->
         <!-- display balance -->
         <div class="balance-display">
-            <h2>The total funds from diffferent sources is in the account is</h2>
+            <!-- <h2>The total funds from diffferent sources after booking</h2> -->
             <?php
             $total="SELECT * from total where `user_name`='$user';";
             $result2 = $db->query($total);
             $row1=$result2->fetch_assoc();
             echo $row1['amt'];
+            mysqli_close($db);
             ?>
             
            

@@ -7,7 +7,7 @@ die ('Unable to connect. Check your connection parameters.');
 mysqli_select_db($db, 'traindb' ) or die(mysqli_error($db));
 session_start();
 if(!isset($_SESSION['sess_user'])){  
-   header("location:home.html");
+   header("location:home.php");
     exit();
 }
 
@@ -48,9 +48,9 @@ if(!isset($_SESSION['sess_user'])){
         <!-- Payment Management -->
         <h1 class=" header-h1">Payment Management</h1>
         <!-- go to main page -->
-        <i class="header-i1 fa fa-home fa-4x"></i>
+        <a style="color:white;" class="header-i1 fa fa-home fa-4x" href="home.php"></a>
         <!-- logout -->
-        <i class="header-i2 fa fa-sign-out fa-4x"></i>
+        <a style="color:white;" class="header-i2 fa fa-sign-out fa-4x" href="feedback1.php"></a>
     </div>
     <div id="body">
         <div class="section1">

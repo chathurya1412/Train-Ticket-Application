@@ -108,7 +108,7 @@ echo "<table border='1'>";
 		echo "<th>Booking id</th>";
 		echo "<th>Departure date</th>";
 		// echo "<th>Pyment Type</th>";
-		echo "<th>Pid</th>";
+		echo "<th>Tid</th>";
 		echo "<th>Pickup</th>";
 		echo "<th>Destination</th>";
 		//echo "<th>Email</th>";
@@ -164,11 +164,15 @@ if(isset($_POST['cancel']))
 {
 	if(!empty($_POST['book_id']))
 	{
-		$book_id=$_POST['book_id'];
 		$con=@mysqli_connect('localhost','root','','traindb') or die(mysql_error());
+		$book_id=$_POST['book_id'];
+		$s="SELECT * from records where User_Name='$usrname'";
+		$result1=mysqli_query($con,$query1);    
+		$row1=mysqli_fetch_assoc($result1);
+		
 		$sql1="delete from records where User_Name='$usrname' and Book_ID='$book_id'";
 		if (mysqli_query($con, $sql1)) {
-			echo "Record deleted successfully";
+			echo "<b style='color:yellow;'>"."Record deleted successfully"."</b>";
 		} else {
 			echo "Error deleting record: ";
 		}
